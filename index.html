@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Digital clock</title>
+</head>
+<body>
+	<div id='time'></div>
+	<script type="text/javascript">
+		function showTime() {
+			var time = new Date();
+			var hours = time.getHours();
+			var minutes = time.getMinutes();
+			var seconds = time.getSeconds();
+			var day = time.getDay();
+			if(hours.lenght < 2) {
+				hours = '0' + hours;
+			} else if (minutes.length < 2) {
+				minutes = '0' + minutes;
+			} else if (seconds.length < 2) {
+				seconds  = '0' +  seconds;
+			}
+
+			var days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thrs', 'Frd', 'Sat'];
+
+			var clock = days[day] + ' ' + hours + ':' + minutes + ':' + seconds;
+
+         document.querySelector('#time').innerHTML = clock;
+         
+		}
+		showTime();
+		setInterval(showTime, 1000);
+		
+	</script>
+</body>
+</html>
