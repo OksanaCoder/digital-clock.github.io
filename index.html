@@ -9,9 +9,9 @@
 	<script type="text/javascript">
 		function showTime() {
 			var time = new Date();
-			var hours = time.getHours();
-			var minutes = time.getMinutes();
-			var seconds = time.getSeconds();
+			var hours = time.getHours() + '';
+			var minutes = time.getMinutes() + '';
+			var seconds = time.getSeconds() + '';
 			var day = time.getDay();
 			if(hours.lenght < 2) {
 				hours = '0' + hours;
